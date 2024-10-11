@@ -6,6 +6,11 @@ import styles from './homepage.module.css';
 import { getBlogPostList } from '@/helpers/file-helpers'
 import Spinner from '@/components/Spinner';
 
+export const metadata = {
+  title: 'Bits & Bytes',
+  description: 'A wonderful blog about JavaScript',
+};
+
 function Home() {
   return (
     <div className={styles.wrapper}>
