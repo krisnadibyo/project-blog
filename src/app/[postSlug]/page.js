@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import CodeSnippet from '@/components/CodeSnippet';
 import dynamic from 'next/dynamic';
 import Spinner from '@/components/Spinner';
+import CircularColorsDemo from '@/components/CircularColorsDemo'
 
 
 const DivisionGroupsDemo = dynamic(
@@ -40,7 +41,7 @@ async function BlogPost({ params }) {
       <div className={styles.page}>
          <MDXRemote 
           source={content}
-          components={{CodeSnippet, DivisionGroupsDemo}}/>  
+          components={{CodeSnippet, DivisionGroupsDemo, CircularColorsDemo}}/>  
       </div>
     </article>
     
