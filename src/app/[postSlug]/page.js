@@ -6,6 +6,17 @@ import styles from './postSlug.module.css';
 import { loadBlogPost } from '@/helpers/file-helpers'
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import CodeSnippet from '@/components/CodeSnippet';
+import dynamic from 'next/dynamic';
+import Spinner from '@/components/Spinner';
+
+
+const DivisionGroupsDemo = dynamic(
+  () => import('@/components/DivisionGroupsDemo'),
+  { 
+    ssr: false,
+    loading: Spinner 
+  }
+);
 
 
 export async function generateMetadata({ params }) {
@@ -29,7 +40,7 @@ async function BlogPost({ params }) {
       <div className={styles.page}>
          <MDXRemote 
           source={content}
-          components={{CodeSnippet}}/>  
+          components={{CodeSnippet, DivisionGroupsDemo}}/>  
       </div>
     </article>
     
